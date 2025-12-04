@@ -23,7 +23,7 @@ export function Navigation() {
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
             <Link href="/" className="text-xl font-semibold text-primary">
-              Zoia Neli <span className="text-foreground">Beauty</span>
+              Bella<span className="text-foreground">Beauty</span>
             </Link>
           </div>
 

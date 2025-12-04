@@ -3,6 +3,7 @@ import { Footer } from "@/components/footer"
 import { Card, CardContent } from "@/components/ui/card"
 import { Check } from "lucide-react"
 import Image from "next/image"
+import Link from "next/link"
 
 export default function AgdaPage() {
   const services = [
@@ -10,31 +11,37 @@ export default function AgdaPage() {
       title: "İpek Sir Ağda",
       description: "Hassas ciltler için özel ipek ağda uygulaması",
       features: ["Acısız uygulama", "Hassas ciltlere uygun", "Uzun süreli etki", "Cilt tahrişi yapmaz"],
+      slug: "ipek-sir-agda",
     },
     {
       title: "Sıcak Ağda",
       description: "Geleneksel yöntemle etkili kıl temizliği",
       features: ["Tüm bölgelere uygun", "Etkili temizlik", "Ekonomik seçenek", "Doğal ürünler"],
+      slug: "sicak-agda",
     },
     {
       title: "Tüy Dökücü Krem",
       description: "Ağrısız kıl temizliği alternatifi",
       features: ["Acısız", "Hızlı uygulama", "Pratik çözüm", "Hassas ciltlere uygun"],
+      slug: "tuy-dokucu-krem",
     },
     {
       title: "Tam Bacak Ağda",
       description: "Tam bacak bölgesi kıl temizliği",
       features: ["Uzman uygulama", "Hijyenik ortam", "Pürüzsüz sonuç", "Uzun ömürlü"],
+      slug: "tam-bacak-agda",
     },
     {
       title: "Kol Ağda",
       description: "Kol bölgesi kıl temizliği",
       features: ["Hızlı işlem", "Etkili sonuç", "Cildi tahriş etmez", "Bakımlı görünüm"],
+      slug: "kol-agda",
     },
     {
       title: "Yüz Ağda",
       description: "Yüz bölgesi hassas kıl temizliği",
       features: ["Özel teknik", "Hassas uygulama", "Cilt dostu", "Profesyonel sonuç"],
+      slug: "yuz-agda",
     },
   ]
 
@@ -61,20 +68,22 @@ export default function AgdaPage() {
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
-              <Card key={index} className="border-border hover:shadow-lg transition-shadow">
-                <CardContent className="p-6">
-                  <h3 className="text-xl font-semibold text-foreground mb-3">{service.title}</h3>
-                  <p className="text-muted-foreground mb-4">{service.description}</p>
-                  <ul className="space-y-2">
-                    {service.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-start gap-2">
-                        <Check className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                        <span className="text-sm text-foreground">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
+              <Link key={index} href={`/hizmetler/agda/${service.slug}`}>
+                <Card className="border-border hover:shadow-lg transition-all h-full hover:scale-105 cursor-pointer">
+                  <CardContent className="p-6">
+                    <h3 className="text-xl font-semibold text-foreground mb-3">{service.title}</h3>
+                    <p className="text-muted-foreground mb-4">{service.description}</p>
+                    <ul className="space-y-2">
+                      {service.features.map((feature, idx) => (
+                        <li key={idx} className="flex items-start gap-2">
+                          <Check className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                          <span className="text-sm text-foreground">{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </CardContent>
+                </Card>
+              </Link>
             ))}
           </div>
         </section>
@@ -94,7 +103,12 @@ export default function AgdaPage() {
               </p>
             </div>
             <div className="relative h-[400px] rounded-lg overflow-hidden">
-              <Image src="/professional-waxing-hair-removal-beauty-salon.jpg" alt="Ağda ve Epilasyon" fill className="object-cover" />
+              <Image
+                src="/professional-waxing-hair-removal-beauty-salon.jpg"
+                alt="Ağda ve Epilasyon"
+                fill
+                className="object-cover"
+              />
             </div>
           </div>
         </section>

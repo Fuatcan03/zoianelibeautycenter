@@ -3,6 +3,7 @@ import { Footer } from "@/components/footer"
 import { Card, CardContent } from "@/components/ui/card"
 import { Check } from "lucide-react"
 import Image from "next/image"
+import Link from "next/link"
 
 export default function TirnakBakimiPage() {
   const services = [
@@ -10,31 +11,37 @@ export default function TirnakBakimiPage() {
       title: "Klasik Manikür",
       description: "Tırnak bakımı, şekillendirme ve oje uygulaması",
       features: ["Tırnak temizliği", "Şekillendirme", "Oje uygulaması", "El masajı"],
+      slug: "klasik-manikur",
     },
     {
       title: "Kalıcı Oje",
       description: "3 hafta bozulmadan kalan kalıcı oje uygulaması",
       features: ["Uzun ömürlü", "Parlak görünüm", "Geniş renk seçeneği", "Profesyonel uygulama"],
+      slug: "kalici-oje",
     },
     {
       title: "Protez Tırnak",
       description: "Doğal görünümlü uzun tırnak uygulaması",
       features: ["Doğal görünüm", "Dayanıklı yapı", "İstenilen uzunluk", "Özel tasarımlar"],
+      slug: "protez-tirnak",
     },
     {
       title: "Nail Art",
       description: "Tırnak süsleme ve özel tasarımlar",
       features: ["Özel desenler", "Taş süsleme", "Ombre tekniği", "French manikür"],
+      slug: "nail-art",
     },
     {
       title: "Pedikür",
       description: "Ayak bakımı ve tırnak bakımı hizmeti",
       features: ["Ayak banyosu", "Tırnak bakımı", "Cilt bakımı", "Ayak masajı"],
+      slug: "pedikur",
     },
     {
       title: "Tırnak Bakımı",
       description: "Tırnak sağlığı ve güçlendirme tedavileri",
       features: ["Kırık önleme", "Güçlendirme", "Nem bakımı", "Onarım tedavisi"],
+      slug: "tirnak-bakimi",
     },
   ]
 
@@ -61,20 +68,22 @@ export default function TirnakBakimiPage() {
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
-              <Card key={index} className="border-border hover:shadow-lg transition-shadow">
-                <CardContent className="p-6">
-                  <h3 className="text-xl font-semibold text-foreground mb-3">{service.title}</h3>
-                  <p className="text-muted-foreground mb-4">{service.description}</p>
-                  <ul className="space-y-2">
-                    {service.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-start gap-2">
-                        <Check className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                        <span className="text-sm text-foreground">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
+              <Link key={index} href={`/hizmetler/tirnak-bakimi/${service.slug}`}>
+                <Card className="border-border hover:shadow-lg transition-all h-full hover:scale-105 cursor-pointer">
+                  <CardContent className="p-6">
+                    <h3 className="text-xl font-semibold text-foreground mb-3">{service.title}</h3>
+                    <p className="text-muted-foreground mb-4">{service.description}</p>
+                    <ul className="space-y-2">
+                      {service.features.map((feature, idx) => (
+                        <li key={idx} className="flex items-start gap-2">
+                          <Check className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
+                          <span className="text-sm text-foreground">{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </CardContent>
+                </Card>
+              </Link>
             ))}
           </div>
         </section>
@@ -94,7 +103,12 @@ export default function TirnakBakimiPage() {
               </p>
             </div>
             <div className="relative h-[400px] rounded-lg overflow-hidden">
-              <Image src="/professional-nail-care-manicure-salon.jpg" alt="Tırnak Bakımı" fill className="object-cover" />
+              <Image
+                src="/professional-nail-care-manicure-salon.jpg"
+                alt="Tırnak Bakımı"
+                fill
+                className="object-cover"
+              />
             </div>
           </div>
         </section>

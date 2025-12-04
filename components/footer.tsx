@@ -7,7 +7,7 @@ export function Footer() {
         <div className="grid md:grid-cols-3 gap-8 mb-8">
           <div>
             <h3 className="text-lg font-semibold text-foreground mb-4">
-              Zoia Neli <span className="text-primary">Beauty</span>
+              Bella<span className="text-primary">Beauty</span>
             </h3>
             <p className="text-sm text-muted-foreground leading-relaxed">
               Güzelliğinize değer katıyoruz. Profesyonel ekibimiz ve kaliteli hizmetimizle yanınızdayız.
@@ -61,7 +61,7 @@ export function Footer() {
         </div>
         <div className="pt-8 border-t border-border flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-sm text-muted-foreground text-center sm:text-left">
-            © 2025 Zoia Neli Beauty. Tüm hakları saklıdır.
+            © 2025 BellaBeauty. Tüm hakları saklıdır.
           </p>
           <p className="text-sm text-muted-foreground flex items-center gap-1">
             Güzelliğiniz için <Sparkles className="w-4 h-4 text-primary" /> ile yapıldı

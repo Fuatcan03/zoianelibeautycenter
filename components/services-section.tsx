@@ -49,8 +49,11 @@ export function ServicesSection() {
           {services.map((service, index) => {
             const Icon = service.icon
             return (
-              <Card key={index} className="p-6 hover:shadow-lg transition-shadow border-border bg-card">
-                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
+              <Card
+                key={index}
+                className="p-6 hover:shadow-lg hover:scale-105 transition-all duration-300 border-border bg-card group"
+              >
+                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:animate-wiggle">
                   <Icon className="w-6 h-6 text-primary" />
                 </div>
                 <h3 className="text-xl font-semibold text-card-foreground mb-2">{service.title}</h3>
