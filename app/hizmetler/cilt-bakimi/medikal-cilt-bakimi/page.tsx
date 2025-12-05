@@ -1,3 +1,4 @@
+import type { Metadata } from "next"
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
@@ -5,6 +6,15 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Check, ArrowLeft, Clock, Sparkles } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
+import { WhatsAppButton } from "@/components/whatsapp-button"
+import { ReviewSection } from "@/components/review-section"
+
+export const metadata: Metadata = {
+  title: "Medikal Cilt Bakımı | Zoia Neli Beauty Center",
+  description:
+    "Medikal cilt bakımı ile cilt problemlerinize çözüm. Akne, leke, kırışıklık tedavisi. Dermatolojik ürünler, uzman ekip.",
+  keywords: "medikal cilt bakımı, akne tedavisi, leke tedavisi, kırışıklık tedavisi, dermatolojik bakım",
+}
 
 export default function MedikalCiltBakimiPage() {
   return (
@@ -132,7 +142,9 @@ export default function MedikalCiltBakimiPage() {
         </div>
       </main>
 
+      <ReviewSection />
       <Footer />
+      <WhatsAppButton />
     </div>
   )
 }

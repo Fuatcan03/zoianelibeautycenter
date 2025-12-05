@@ -1,40 +1,32 @@
 "use client"
 
 import { Button } from "@/components/ui/button"
-import { Menu, X, ChevronDown } from "lucide-react"
+import { Menu, X, ChevronDown, Phone } from "lucide-react"
 import { useState } from "react"
 import Link from "next/link"
+import Image from "next/image"
 
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
   const [isServicesOpen, setIsServicesOpen] = useState(false)
 
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id)
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" })
-      setIsOpen(false)
-    }
-  }
-
   return (
     <nav className="fixed top-0 w-full bg-background/95 backdrop-blur-sm border-b border-border z-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="flex items-center justify-between h-16">
-          <div className="flex items-center">
-            <Link href="/" className="text-xl font-semibold text-primary">
-              Bella<span className="text-foreground">Beauty</span>
-            </Link>
-          </div>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-20">
+          <Link href="/" className="flex items-center gap-3">
+            <Image src="/logo.png" alt="Zoia Neli Beauty Center" width={50} height={50} className="w-12 h-12" />
+            <div className="hidden sm:block">
+              <div className="text-xl font-serif font-bold text-foreground">ZOIA NELI</div>
+              <div className="text-xs text-primary tracking-wider">BEAUTY CENTER</div>
+            </div>
+          </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
-            <button
-              onClick={() => scrollToSection("giris")}
-              className="text-sm font-medium text-foreground hover:text-primary transition-colors"
-            >
-              Giriş
-            </button>
+          <div className="hidden md:flex items-center gap-6">
+            <Link href="/" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
+              Ana Sayfa
+            </Link>
 
             <div
               className="relative group"
@@ -47,41 +39,53 @@ export function Navigation() {
               </button>
 
               {isServicesOpen && (
-                <div className="absolute top-full left-0 mt-2 w-48 bg-background border border-border rounded-md shadow-lg py-2 z-50">
+                <div className="absolute top-full left-0 mt-2 w-56 bg-background border border-border rounded-lg shadow-xl py-2 z-50">
                   <Link
-                    href="/hizmetler/tirnak-bakimi"
-                    className="block px-4 py-2 text-sm text-foreground hover:bg-secondary hover:text-primary transition-colors"
+                    href="/hizmetler/agda"
+                    className="block px-4 py-3 text-sm text-foreground hover:bg-secondary hover:text-primary transition-colors"
                   >
-                    Tırnak Bakımı
+                    Ağda Hizmetleri
                   </Link>
                   <Link
                     href="/hizmetler/cilt-bakimi"
-                    className="block px-4 py-2 text-sm text-foreground hover:bg-secondary hover:text-primary transition-colors"
+                    className="block px-4 py-3 text-sm text-foreground hover:bg-secondary hover:text-primary transition-colors"
                   >
                     Cilt Bakımı
                   </Link>
                   <Link
-                    href="/hizmetler/agda"
-                    className="block px-4 py-2 text-sm text-foreground hover:bg-secondary hover:text-primary transition-colors"
+                    href="/hizmetler/tirnak-bakimi"
+                    className="block px-4 py-3 text-sm text-foreground hover:bg-secondary hover:text-primary transition-colors"
                   >
-                    Ağda
+                    Tırnak Bakımı
+                  </Link>
+                  <Link
+                    href="/hizmetler/kalici-makyaj"
+                    className="block px-4 py-3 text-sm text-foreground hover:bg-secondary hover:text-primary transition-colors"
+                  >
+                    Kalıcı Makyaj
                   </Link>
                 </div>
               )}
             </div>
 
-            <button
-              onClick={() => scrollToSection("yardim")}
+            <Link
+              href="/hakkimizda"
               className="text-sm font-medium text-foreground hover:text-primary transition-colors"
             >
-              Nasıl Yardımcı Olabiliriz
-            </button>
-            <Button
-              onClick={() => scrollToSection("iletisim")}
-              className="bg-primary text-primary-foreground hover:bg-primary/90"
-            >
+              Hakkımızda
+            </Link>
+
+            <Link href="/iletisim" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
               İletişim
-            </Button>
+            </Link>
+
+            <a
+              href="tel:+905428772277"
+              className="flex items-center gap-2 px-4 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors"
+            >
+              <Phone className="w-4 h-4" />
+              <span className="text-sm font-medium">0542 877 22 77</span>
+            </a>
           </div>
 
           {/* Mobile menu button */}
@@ -95,14 +99,15 @@ export function Navigation() {
 
       {/* Mobile Navigation */}
       {isOpen && (
-        <div className="md:hidden border-t border-border bg-background relative z-10">
+        <div className="md:hidden border-t border-border bg-background">
           <div className="px-4 pt-2 pb-3 space-y-1">
-            <button
-              onClick={() => scrollToSection("giris")}
-              className="block w-full text-left px-3 py-2 text-base font-medium text-foreground hover:text-primary hover:bg-secondary rounded-md transition-colors"
+            <Link
+              href="/"
+              className="block px-3 py-2 text-base font-medium text-foreground hover:text-primary hover:bg-secondary rounded-md transition-colors"
+              onClick={() => setIsOpen(false)}
             >
-              Giriş
-            </button>
+              Ana Sayfa
+            </Link>
 
             <div>
               <button
@@ -115,6 +120,20 @@ export function Navigation() {
               {isServicesOpen && (
                 <div className="ml-4 mt-1 space-y-1">
                   <Link
+                    href="/hizmetler/agda"
+                    className="block px-3 py-2 text-sm text-foreground hover:text-primary hover:bg-secondary rounded-md transition-colors"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    Ağda Hizmetleri
+                  </Link>
+                  <Link
+                    href="/hizmetler/cilt-bakimi"
+                    className="block px-3 py-2 text-sm text-foreground hover:bg-secondary hover:text-primary rounded-md transition-colors"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    Cilt Bakımı
+                  </Link>
+                  <Link
                     href="/hizmetler/tirnak-bakimi"
                     className="block px-3 py-2 text-sm text-foreground hover:text-primary hover:bg-secondary rounded-md transition-colors"
                     onClick={() => setIsOpen(false)}
@@ -122,35 +141,39 @@ export function Navigation() {
                     Tırnak Bakımı
                   </Link>
                   <Link
-                    href="/hizmetler/cilt-bakimi"
+                    href="/hizmetler/kalici-makyaj"
                     className="block px-3 py-2 text-sm text-foreground hover:text-primary hover:bg-secondary rounded-md transition-colors"
                     onClick={() => setIsOpen(false)}
                   >
-                    Cilt Bakımı
-                  </Link>
-                  <Link
-                    href="/hizmetler/agda"
-                    className="block px-3 py-2 text-sm text-foreground hover:text-primary hover:bg-secondary rounded-md transition-colors"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    Ağda
+                    Kalıcı Makyaj
                   </Link>
                 </div>
               )}
             </div>
 
-            <button
-              onClick={() => scrollToSection("yardim")}
-              className="block w-full text-left px-3 py-2 text-base font-medium text-foreground hover:text-primary hover:bg-secondary rounded-md transition-colors"
+            <Link
+              href="/hakkimizda"
+              className="block px-3 py-2 text-base font-medium text-foreground hover:text-primary hover:bg-secondary rounded-md transition-colors"
+              onClick={() => setIsOpen(false)}
             >
-              Nasıl Yardımcı Olabiliriz
-            </button>
-            <button
-              onClick={() => scrollToSection("iletisim")}
-              className="block w-full text-left px-3 py-2 text-base font-medium text-primary hover:bg-secondary rounded-md transition-colors"
+              Hakkımızda
+            </Link>
+
+            <Link
+              href="/iletisim"
+              className="block px-3 py-2 text-base font-medium text-foreground hover:text-primary hover:bg-secondary rounded-md transition-colors"
+              onClick={() => setIsOpen(false)}
             >
               İletişim
-            </button>
+            </Link>
+
+            <a
+              href="tel:+905428772277"
+              className="flex items-center gap-2 px-3 py-2 mt-2 bg-primary text-primary-foreground rounded-md hover:bg-primary/90 transition-colors"
+            >
+              <Phone className="w-4 h-4" />
+              <span className="text-sm font-medium">0542 877 22 77</span>
+            </a>
           </div>
         </div>
       )}

@@ -4,6 +4,16 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Check } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
+import { WhatsAppButton } from "@/components/whatsapp-button"
+import { ReviewSection } from "@/components/review-section"
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Ağda ve Epilasyon Hizmetleri | Zoia Neli Beauty Center",
+  description:
+    "Profesyonel ağda hizmetleri ile pürüzsüz cilt. İpek sir ağda, sıcak ağda, tam bacak, kol ve yüz ağdası. Lefkoşa'da uygun fiyatlarla ağda hizmetleri.",
+  keywords: "ağda lefkoşa, epilasyon, ipek sir ağda, sıcak ağda, bacak ağdası, kol ağdası, yüz ağdası",
+}
 
 export default function AgdaPage() {
   const services = [
@@ -114,7 +124,9 @@ export default function AgdaPage() {
         </section>
       </main>
 
+      <ReviewSection />
       <Footer />
+      <WhatsAppButton />
     </div>
   )
 }

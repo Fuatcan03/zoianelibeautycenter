@@ -1,3 +1,4 @@
+import type { Metadata } from "next"
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
@@ -5,6 +6,15 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Check, ArrowLeft, Clock, Sparkles } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
+import { WhatsAppButton } from "@/components/whatsapp-button"
+import { ReviewSection } from "@/components/review-section"
+
+export const metadata: Metadata = {
+  title: "Kimyasal Peeling | Zoia Neli Beauty Center",
+  description:
+    "Profesyonel kimyasal peeling ile cilt yenileme. Leke tedavisi, akne izi azaltma, cilt tonu eşitleme. Medikal ürünler, uzman uygulama.",
+  keywords: "kimyasal peeling, cilt yenileme, leke tedavisi, akne izi, chemical peel, lefkoşa",
+}
 
 export default function KimyasalPeelingPage() {
   return (
@@ -138,7 +148,9 @@ export default function KimyasalPeelingPage() {
         </div>
       </main>
 
+      <ReviewSection />
       <Footer />
+      <WhatsAppButton />
     </div>
   )
 }

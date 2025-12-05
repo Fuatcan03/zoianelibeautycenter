@@ -1,3 +1,4 @@
+import type { Metadata } from "next"
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
@@ -5,6 +6,15 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Check, ArrowLeft, Clock, Sparkles } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
+import { WhatsAppButton } from "@/components/whatsapp-button"
+import { ReviewSection } from "@/components/review-section"
+
+export const metadata: Metadata = {
+  title: "Tüy Dökücü Krem Uygulaması | Zoia Neli Beauty Center",
+  description:
+    "Ağrısız tüy dökücü krem uygulaması. Hassas ciltler için uygun alternatif yöntem. Hızlı ve pratik çözüm. Lefkoşa beauty center.",
+  keywords: "tüy dökücü krem, ağrısız tüy dökücü, depilasyon kremi, hassas cilt, lefkoşa",
+}
 
 export default function TuyDokucuKremPage() {
   return (
@@ -128,7 +138,9 @@ export default function TuyDokucuKremPage() {
         </div>
       </main>
 
+      <ReviewSection />
       <Footer />
+      <WhatsAppButton />
     </div>
   )
 }

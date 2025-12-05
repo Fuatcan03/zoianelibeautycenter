@@ -1,3 +1,4 @@
+import type { Metadata } from "next"
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
@@ -5,6 +6,15 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Check, ArrowLeft, Clock, Sparkles } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
+import { WhatsAppButton } from "@/components/whatsapp-button"
+import { ReviewSection } from "@/components/review-section"
+
+export const metadata: Metadata = {
+  title: "Mesoterapi Cilt Bakımı | Zoia Neli Beauty Center",
+  description:
+    "Mesoterapi ile cilt gençleştirme. Vitamin ve mineral infüzyonu, kolajen üretimi, cilt sıkılaştırma. Antiaging tedavi.",
+  keywords: "mesoterapi, mezoterapy, cilt gençleştirme, antiaging, vitamin tedavisi, lefkoşa",
+}
 
 export default function MesotherapyPage() {
   return (
@@ -137,7 +147,9 @@ export default function MesotherapyPage() {
         </div>
       </main>
 
+      <ReviewSection />
       <Footer />
+      <WhatsAppButton />
     </div>
   )
 }

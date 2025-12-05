@@ -5,6 +5,16 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Check, ArrowLeft, Clock, Sparkles } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
+import { WhatsAppButton } from "@/components/whatsapp-button"
+import { ReviewSection } from "@/components/review-section"
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Yüz Ağda Hizmetleri | Zoia Neli Beauty Center",
+  description:
+    "Hassas yüz ağdası hizmetleri. Üst dudak, çene, yanaklar, alın ve boyun ağdası. Cilt dostu ürünler, profesyonel uygulama. Lefkoşa yüz ağdası.",
+  keywords: "yüz ağda, üst dudak ağda, çene ağda, yüz epilasyon, hassas cilt ağda, lefkoşa",
+}
 
 export default function YuzAgdaPage() {
   return (
@@ -128,10 +138,13 @@ export default function YuzAgdaPage() {
               </ul>
             </CardContent>
           </Card>
+
+          <ReviewSection />
         </div>
       </main>
 
       <Footer />
+      <WhatsAppButton />
     </div>
   )
 }

@@ -1,9 +1,19 @@
+import type { Metadata } from "next"
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { Card, CardContent } from "@/components/ui/card"
 import { Check } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
+import { WhatsAppButton } from "@/components/whatsapp-button"
+import { ReviewSection } from "@/components/review-section"
+
+export const metadata: Metadata = {
+  title: "Cilt Bakımı Hizmetleri | Zoia Neli Beauty Center",
+  description:
+    "Profesyonel cilt bakımı, hydrafacial, kimyasal peeling, mesotherapy ve oksijen terapisi. Lefkoşa'da en iyi cilt bakım merkezi. Uzman ekip, modern teknoloji.",
+  keywords: "cilt bakımı lefkoşa, hydrafacial, medikal cilt bakımı, kimyasal peeling, mesotherapy, oksijen terapisi",
+}
 
 export default function CiltBakimiPage() {
   const services = [
@@ -114,7 +124,9 @@ export default function CiltBakimiPage() {
         </section>
       </main>
 
+      <ReviewSection />
       <Footer />
+      <WhatsAppButton />
     </div>
   )
 }

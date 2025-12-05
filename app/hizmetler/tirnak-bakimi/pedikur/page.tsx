@@ -1,3 +1,4 @@
+import type { Metadata } from "next"
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
@@ -5,6 +6,15 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Check, ArrowLeft, Clock, Sparkles } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
+import { WhatsAppButton } from "@/components/whatsapp-button"
+import { ReviewSection } from "@/components/review-section"
+
+export const metadata: Metadata = {
+  title: "Pedikür | Zoia Neli Beauty Center",
+  description:
+    "Profesyonel pedikür hizmeti. Ayak bakımı, nasır temizliği, ayak masajı. SPA pedikür seçenekleri. Lefkoşa'da hijyenik ortam.",
+  keywords: "pedikür, ayak bakımı, nasır temizliği, spa pedikür, ayak masajı, lefkoşa",
+}
 
 export default function PedikurPage() {
   return (
@@ -108,7 +118,9 @@ export default function PedikurPage() {
         </div>
       </main>
 
+      <ReviewSection />
       <Footer />
+      <WhatsAppButton />
     </div>
   )
 }

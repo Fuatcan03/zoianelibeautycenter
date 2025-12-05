@@ -1,3 +1,4 @@
+import type { Metadata } from "next"
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
@@ -5,6 +6,15 @@ import { Card, CardContent } from "@/components/ui/card"
 import { ArrowLeft, Clock, Sparkles } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
+import { WhatsAppButton } from "@/components/whatsapp-button"
+import { ReviewSection } from "@/components/review-section"
+
+export const metadata: Metadata = {
+  title: "Sıcak Ağda Hizmetleri | Zoia Neli Beauty Center",
+  description:
+    "Geleneksel sıcak ağda uygulaması. Ekonomik ve etkili kıl temizliği. Tüm vücut bölgeleri için uygun. Doğal ürünler, hijyenik ortam.",
+  keywords: "sıcak ağda, klasik ağda, geleneksel ağda, vücut ağdası, lefkoşa ağda",
+}
 
 export default function SicakAgdaPage() {
   return (
@@ -120,7 +130,9 @@ export default function SicakAgdaPage() {
         </div>
       </main>
 
+      <ReviewSection />
       <Footer />
+      <WhatsAppButton />
     </div>
   )
 }

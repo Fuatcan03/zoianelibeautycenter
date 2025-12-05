@@ -3,6 +3,16 @@ import { Footer } from "@/components/footer"
 import { ArrowLeft, Check, Clock, Sparkles } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
+import { WhatsAppButton } from "@/components/whatsapp-button"
+import { ReviewSection } from "@/components/review-section"
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Hydrafacial Cilt Bakımı | Zoia Neli Beauty Center",
+  description:
+    "Son teknoloji Hydrafacial cilt bakımı ile cildinizi yenileyin. Derin temizlik, serum infüzyonu ve anında sonuç. Lefkoşa'nın en iyi cilt bakımı.",
+  keywords: "hydrafacial, cilt bakımı, yüz bakımı, cilt temizliği, lefkoşa cilt bakımı, hydrafacial fiyat",
+}
 
 export default function HydrafacialPage() {
   return (
@@ -121,7 +131,9 @@ export default function HydrafacialPage() {
         </section>
       </main>
 
+      <ReviewSection />
       <Footer />
+      <WhatsAppButton />
     </div>
   )
 }

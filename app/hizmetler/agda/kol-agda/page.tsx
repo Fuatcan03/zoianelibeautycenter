@@ -5,6 +5,16 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Check, ArrowLeft, Clock, Sparkles } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
+import { WhatsAppButton } from "@/components/whatsapp-button"
+import { ReviewSection } from "@/components/review-section"
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Kol Ağda Hizmetleri | Zoia Neli Beauty Center",
+  description:
+    "Tam kol ve yarım kol ağda hizmetleri. İpek sir ağda ve sıcak ağda seçenekleri. Uygun fiyatlar, profesyonel uygulama. Lefkoşa'da kol ağdası.",
+  keywords: "kol ağda, kol epilasyon, tam kol ağda, yarım kol ağda, ipek sir ağda, lefkoşa ağda",
+}
 
 export default function KolAgdaPage() {
   return (
@@ -125,10 +135,13 @@ export default function KolAgdaPage() {
               </div>
             </CardContent>
           </Card>
+
+          <ReviewSection />
         </div>
       </main>
 
       <Footer />
+      <WhatsAppButton />
     </div>
   )
 }

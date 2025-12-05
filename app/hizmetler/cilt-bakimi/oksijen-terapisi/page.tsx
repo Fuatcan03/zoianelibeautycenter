@@ -1,3 +1,4 @@
+import type { Metadata } from "next"
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
@@ -5,6 +6,15 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Check, ArrowLeft, Clock, Sparkles } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
+import { WhatsAppButton } from "@/components/whatsapp-button"
+import { ReviewSection } from "@/components/review-section"
+
+export const metadata: Metadata = {
+  title: "Oksijen Terapisi | Zoia Neli Beauty Center",
+  description:
+    "Oksijen terapisi ile cildinizi canlandırın. Hücre yenileme, cilt aydınlatma, nemlendirme. Anında sonuç veren tedavi.",
+  keywords: "oksijen terapisi, oxygen therapy, cilt canlandırma, cilt aydınlatma, lefkoşa",
+}
 
 export default function OksijenTerapisiPage() {
   return (
@@ -129,7 +139,9 @@ export default function OksijenTerapisiPage() {
         </div>
       </main>
 
+      <ReviewSection />
       <Footer />
+      <WhatsAppButton />
     </div>
   )
 }

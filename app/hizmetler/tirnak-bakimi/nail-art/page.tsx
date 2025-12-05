@@ -1,3 +1,4 @@
+import type { Metadata } from "next"
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
@@ -5,6 +6,15 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Check, ArrowLeft, Clock, Sparkles } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
+import { WhatsAppButton } from "@/components/whatsapp-button"
+import { ReviewSection } from "@/components/review-section"
+
+export const metadata: Metadata = {
+  title: "Nail Art | Zoia Neli Beauty Center",
+  description:
+    "Özel nail art tasarımları. French manikür, ombre, taş süsleme, el boyama. Tırnaklarınızı sanata dönüştürün. Lefkoşa'da uzman nail artist.",
+  keywords: "nail art, tırnak süsleme, french manikür, ombre tırnak, taş süsleme, tırnak tasarım, lefkoşa",
+}
 
 export default function NailArtPage() {
   return (
@@ -122,7 +132,9 @@ export default function NailArtPage() {
         </div>
       </main>
 
+      <ReviewSection />
       <Footer />
+      <WhatsAppButton />
     </div>
   )
 }

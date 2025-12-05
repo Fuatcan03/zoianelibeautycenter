@@ -5,6 +5,16 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Check, ArrowLeft, Clock } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
+import { WhatsAppButton } from "@/components/whatsapp-button"
+import { ReviewSection } from "@/components/review-section"
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Tam Bacak Ağda | Zoia Neli Beauty Center",
+  description:
+    "Profesyonel tam bacak ağda hizmetimizle pürüzsüz bacaklara kavuşun. İpek sir ağda ve sıcak ağda seçenekleri. Uygun fiyatlar, uzman ekip.",
+  keywords: "tam bacak ağda, bacak epilasyon, ipek sir ağda, lefkoşa ağda, ağda fiyatları",
+}
 
 export default function TamBacakAgdaPage() {
   return (
@@ -44,17 +54,25 @@ export default function TamBacakAgdaPage() {
               <div className="space-y-3">
                 <div className="flex justify-between items-center pb-3 border-b">
                   <div>
-                    <h3 className="font-semibold text-foreground">İpek Sir Ağda</h3>
-                    <p className="text-sm text-muted-foreground">En az acılı, hassas ciltlere uygun</p>
+                    <h3 className="font-semibold text-foreground">Tam Bacak Ağda</h3>
+                    <p className="text-sm text-muted-foreground">Normal fiyat</p>
                   </div>
-                  <span className="font-bold text-primary">450 ₺</span>
+                  <div className="text-right">
+                    <span className="font-bold text-primary text-xl">500 TL</span>
+                    <p className="text-sm text-accent line-through">590 TL</p>
+                    <p className="text-xs text-accent font-semibold">%15 İNDİRİM</p>
+                  </div>
                 </div>
                 <div className="flex justify-between items-center">
                   <div>
-                    <h3 className="font-semibold text-foreground">Sıcak Ağda</h3>
-                    <p className="text-sm text-muted-foreground">Klasik yöntem, etkili sonuç</p>
+                    <h3 className="font-semibold text-foreground">Yarım Bacak Ağda</h3>
+                    <p className="text-sm text-muted-foreground">Diz altı</p>
                   </div>
-                  <span className="font-bold text-primary">300 ₺</span>
+                  <div className="text-right">
+                    <span className="font-bold text-primary text-xl">300 TL</span>
+                    <p className="text-sm text-accent line-through">350 TL</p>
+                    <p className="text-xs text-accent font-semibold">%15 İNDİRİM</p>
+                  </div>
                 </div>
               </div>
             </CardContent>
@@ -115,7 +133,9 @@ export default function TamBacakAgdaPage() {
         </div>
       </main>
 
+      <ReviewSection />
       <Footer />
+      <WhatsAppButton />
     </div>
   )
 }

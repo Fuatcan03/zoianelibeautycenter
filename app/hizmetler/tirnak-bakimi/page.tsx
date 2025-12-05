@@ -1,9 +1,19 @@
+import type { Metadata } from "next"
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { Card, CardContent } from "@/components/ui/card"
 import { Check } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
+import { WhatsAppButton } from "@/components/whatsapp-button"
+import { ReviewSection } from "@/components/review-section"
+
+export const metadata: Metadata = {
+  title: "Tırnak Bakımı Hizmetleri | Zoia Neli Beauty Center",
+  description:
+    "Manikür, pedikür, kalıcı oje, protez tırnak ve nail art hizmetleri. Lefkoşa'da profesyonel tırnak bakımı. Hijyenik ortam, uzman ekip.",
+  keywords: "tırnak bakımı lefkoşa, manikür, pedikür, kalıcı oje, protez tırnak, nail art, jel tırnak",
+}
 
 export default function TirnakBakimiPage() {
   const services = [
@@ -114,7 +124,9 @@ export default function TirnakBakimiPage() {
         </section>
       </main>
 
+      <ReviewSection />
       <Footer />
+      <WhatsAppButton />
     </div>
   )
 }

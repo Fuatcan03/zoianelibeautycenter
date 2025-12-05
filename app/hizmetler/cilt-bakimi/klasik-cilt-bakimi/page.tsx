@@ -1,3 +1,4 @@
+import type { Metadata } from "next"
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
@@ -5,6 +6,15 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Check, ArrowLeft, Clock, Sparkles } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
+import { WhatsAppButton } from "@/components/whatsapp-button"
+import { ReviewSection } from "@/components/review-section"
+
+export const metadata: Metadata = {
+  title: "Klasik Cilt Bakımı | Zoia Neli Beauty Center",
+  description:
+    "Klasik cilt bakımı ile cildinizi temizleyin ve yenileyin. Derin temizlik, buhar, maske ve masaj. Her cilt tipine uygun bakım programları.",
+  keywords: "klasik cilt bakımı, yüz bakımı, derin temizlik, cilt temizliği, facial, lefkoşa",
+}
 
 export default function KlasikCiltBakimiPage() {
   return (
@@ -120,7 +130,9 @@ export default function KlasikCiltBakimiPage() {
         </div>
       </main>
 
+      <ReviewSection />
       <Footer />
+      <WhatsAppButton />
     </div>
   )
 }

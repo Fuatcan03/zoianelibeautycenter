@@ -1,3 +1,4 @@
+import type { Metadata } from "next"
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
@@ -5,6 +6,15 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Check, ArrowLeft, Clock, Sparkles } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
+import { WhatsAppButton } from "@/components/whatsapp-button"
+import { ReviewSection } from "@/components/review-section"
+
+export const metadata: Metadata = {
+  title: "Protez Tırnak | Zoia Neli Beauty Center",
+  description:
+    "Protez tırnak uygulaması. Jel tırnak, akrilik tırnak. Doğal görünümlü, dayanıklı uzatma. Profesyonel uygulama, uygun dolgu fiyatları.",
+  keywords: "protez tırnak, jel tırnak, akrilik tırnak, tırnak uzatma, nail extension, lefkoşa",
+}
 
 export default function ProtezTirnakPage() {
   return (
@@ -100,7 +110,9 @@ export default function ProtezTirnakPage() {
         </div>
       </main>
 
+      <ReviewSection />
       <Footer />
+      <WhatsAppButton />
     </div>
   )
 }

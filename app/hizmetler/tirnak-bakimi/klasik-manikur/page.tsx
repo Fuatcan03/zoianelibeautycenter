@@ -1,8 +1,18 @@
+import type { Metadata } from "next"
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { ArrowLeft, Check, Clock, Sparkles } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
+import { WhatsAppButton } from "@/components/whatsapp-button"
+import { ReviewSection } from "@/components/review-section"
+
+export const metadata: Metadata = {
+  title: "Klasik Manikür | Zoia Neli Beauty Center",
+  description:
+    "Profesyonel manikür hizmetleri. Tırnak şekillendirme, kütikül bakımı, cilalama ve oje uygulaması. Hijyenik ve rahatlatıcı.",
+  keywords: "manikür, klasik manikür, tırnak bakımı, el bakımı, nail care, lefkoşa",
+}
 
 export default function KlasikManikulPage() {
   return (
@@ -122,7 +132,9 @@ export default function KlasikManikulPage() {
         </section>
       </main>
 
+      <ReviewSection />
       <Footer />
+      <WhatsAppButton />
     </div>
   )
 }

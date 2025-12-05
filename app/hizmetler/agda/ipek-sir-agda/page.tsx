@@ -3,6 +3,16 @@ import { Footer } from "@/components/footer"
 import { ArrowLeft, Check, Clock, Sparkles } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
+import { WhatsAppButton } from "@/components/whatsapp-button"
+import { ReviewSection } from "@/components/review-section"
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "İpek Sir Ağda | Zoia Neli Beauty Center",
+  description:
+    "Hassas ciltler için özel ipek sir ağda uygulaması. Acısız, etkili ve uzun süreli kıl temizliği. Profesyonel uygulama, uygun fiyatlar.",
+  keywords: "ipek sir ağda, hassas cilt ağda, acısız ağda, lefkoşa epilasyon, ağda fiyatları",
+}
 
 export default function IpekSirAgdaPage() {
   return (
@@ -121,7 +131,9 @@ export default function IpekSirAgdaPage() {
         </section>
       </main>
 
+      <ReviewSection />
       <Footer />
+      <WhatsAppButton />
     </div>
   )
 }

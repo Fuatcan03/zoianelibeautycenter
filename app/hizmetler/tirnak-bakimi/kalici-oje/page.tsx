@@ -1,3 +1,4 @@
+import type { Metadata } from "next"
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
@@ -5,6 +6,15 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Check, ArrowLeft, Clock, Sparkles } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
+import { WhatsAppButton } from "@/components/whatsapp-button"
+import { ReviewSection } from "@/components/review-section"
+
+export const metadata: Metadata = {
+  title: "Kalıcı Oje | Zoia Neli Beauty Center",
+  description:
+    "Kalıcı oje uygulaması ile 2-3 hafta bozulmayan tırnaklar. Zengin renk seçenekleri, hijyenik uygulama. Jel oje, gel polish.",
+  keywords: "kalıcı oje, jel oje, gel polish, shellac, kalıcı tırnak boyası, lefkoşa",
+}
 
 export default function KaliciOjePage() {
   return (
@@ -100,7 +110,9 @@ export default function KaliciOjePage() {
         </div>
       </main>
 
+      <ReviewSection />
       <Footer />
+      <WhatsAppButton />
     </div>
   )
 }
