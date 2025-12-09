@@ -4,61 +4,77 @@ import Image from "next/image"
 
 const products = [
   {
-    name: "Tüy Dökücü Krem",
-    description: "Hassas ciltler için özel formül tüy dökücü krem",
-    price: "150₺",
-    image: "/hair-removal-cream-product.jpg",
+    name: "Pharm Foot Luxury Touch – Perfumed Regenerating Illuminating Ointment",
+    image: "/product-1.png",
   },
   {
-    name: "Ağda Sonrası Bakım Losyonu",
-    description: "Ağda sonrası cildi yatıştıran ve nemlendiren losyon",
-    price: "120₺",
-    image: "/after-wax-care-lotion.jpg",
+    name: "Pharm Foot Luxury Touch – Perfumed Regenerating & Illuminating Ointment",
+    image: "/product-2.png",
   },
   {
-    name: "Cilt Bakım Serumu",
-    description: "Yoğun nemlendirici ve yaşlanma karşıtı serum",
-    price: "200₺",
-    image: "/luxury-skincare-serum.jpg",
+    name: "Victoria Vynn Spa Ritual – Milk & Cherry Blossom Butter",
+    image: "/product-3.png",
   },
   {
-    name: "Tırnak Güçlendirici",
-    description: "Kırılgan tırnaklar için özel güçlendirici formül",
-    price: "100₺",
-    image: "/nail-strengthener-product.jpg",
+    name: "Victoria Vynn Spa Ritual – Orange & Clove Butter",
+    image: "/product-4.png",
   },
 ]
 
 export function ProductsSection() {
+  const whatsappBase = "https://wa.me/905428772277"
+
+  const generateWhatsAppMessage = (product: any) => {
+    const text =
+      `Merhaba, bu ürünle ilgileniyorum:\n` +
+      `Ürün: ${product.name}\n` +
+      `Görsel: ${typeof window !== "undefined" ? window.location.origin + product.image : product.image}`
+    return `${whatsappBase}?text=${encodeURIComponent(text)}`
+  }
+
   return (
-    <section className="py-24 px-4 sm:px-6 lg:px-8 bg-secondary/30">
+    <section className="py-28 px-4 sm:px-6 lg:px-8 bg-secondary/30">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16 space-y-4">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-primary/10 rounded-full mb-4">
+        <div className="text-center mb-20 space-y-5">
+          <div className="inline-flex items-center gap-2 px-5 py-2.5 bg-primary/10 rounded-full shadow-sm">
             <ShoppingBag className="w-5 h-5 text-primary" />
             <span className="text-sm font-semibold text-primary">Premium Ürünler</span>
           </div>
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-bold text-foreground text-balance">
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-serif font-bold text-foreground">
             Bakım Ürünlerimiz
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Ev bakımınızı tamamlayacak, dermatoloji onaylı premium ürünlerimizi keşfedin
+            Profesyonel bakım ürünlerimizi inceleyebilir ve WhatsApp üzerinden bilgi alabilirsiniz.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
           {products.map((product, index) => (
-            <Card key={index} className="overflow-hidden hover:shadow-xl transition-all hover:scale-105 duration-300">
-              <div className="relative h-48 overflow-hidden bg-gradient-to-br from-secondary to-primary/10">
-                <Image src={product.image || "/placeholder.svg"} alt={product.name} fill className="object-cover" />
+            <Card
+              key={index}
+              className="overflow-hidden rounded-2xl shadow-md hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 bg-white/60 backdrop-blur-sm"
+            >
+              <div className="relative h-72 overflow-hidden bg-gradient-to-br from-secondary to-primary/20">
+                <Image
+                  src={product.image}
+                  alt={product.name}
+                  fill
+                  className="object-cover transform hover:scale-110 transition-all duration-700"
+                />
               </div>
-              <CardContent className="p-6 space-y-3">
-                <h3 className="text-xl font-semibold text-foreground">{product.name}</h3>
-                <p className="text-sm text-muted-foreground line-clamp-2">{product.description}</p>
-                <div className="flex items-center justify-between pt-3 border-t border-border">
-                  <span className="text-2xl font-bold text-primary">{product.price}</span>
-                  <a href="tel:+905428772277" className="text-sm text-primary font-medium hover:underline">
-                    Bilgi Al →
+              <CardContent className="p-6 space-y-4">
+                <h3 className="text-lg font-semibold text-foreground min-h-[56px]">
+                  {product.name}
+                </h3>
+
+                <div className="pt-4 flex justify-between items-center border-t border-border/60">
+                  <a
+                    href={generateWhatsAppMessage(product)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-sm font-semibold text-primary hover:text-primary/80 transition-colors"
+                  >
+                    Fiyat Sor →
                   </a>
                 </div>
               </CardContent>
@@ -66,16 +82,17 @@ export function ProductsSection() {
           ))}
         </div>
 
-        <div className="text-center mt-12">
-          <p className="text-muted-foreground mb-4">
-            Ürünlerimiz hakkında detaylı bilgi almak ve sipariş vermek için bizi arayın
+        <div className="text-center mt-16">
+          <p className="text-muted-foreground mb-4 text-lg">
+            Ürünler hakkında tüm sorularınız için WhatsApp üzerinden bize ulaşabilirsiniz.
           </p>
           <a
-            href="tel:+905428772277"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors"
+            href="https://wa.me/905428772277"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-white text-lg rounded-xl shadow-md hover:bg-primary/90 transition-colors"
+            target="_blank"
           >
-            <ShoppingBag className="w-5 h-5" />
-            0542 877 22 77
+            <ShoppingBag className="w-6 h-6" />
+            WhatsApp: 0542 877 22 77
           </a>
         </div>
       </div>

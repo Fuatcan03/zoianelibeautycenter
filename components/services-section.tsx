@@ -1,5 +1,5 @@
 import { Card } from "@/components/ui/card"
-import { Sparkles, Droplet, HandMetal, Palette } from "lucide-react"
+import { Sparkles, Droplet, HandMetal, Zap } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
 
@@ -30,12 +30,12 @@ const services = [
     price: "Detaylar için iletişime geçin",
   },
   {
-    icon: Palette,
-    title: "Kalıcı Makyaj",
-    description: "Kaş, eyeliner ve dudak kontur uygulamaları ile doğal güzelliğinizi ön plana çıkarın.",
-    image: "/permanent-makeup-eyebrow-microblading.jpg",
-    link: "/hizmetler/kalici-makyaj",
-    price: "Profesyonel uygulamalar",
+    icon: Zap,
+    title: "Lazer Epilasyon",
+    description: "Son teknoloji lazer cihazları ile kalıcı tüy alma. Tüm vücut bölgeleri için güvenli ve etkili çözüm.",
+    image: "/laser-hair-removal-treatment.jpg",
+    link: "/hizmetler/lazer-epilasyon",
+    price: "Profesyonel lazer teknolojisi",
   },
 ]
 
